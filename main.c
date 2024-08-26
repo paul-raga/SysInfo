@@ -14,7 +14,7 @@ int main(void) {
   printf("%s",searchinfo(devfopen("mem"),"MemFree"));
   printf("%s\n",searchinfo(devfopen("mem"),"MemAvailable"));
 
-  printf("%s",searchinfo(devfopen("gpu"),"Model"));
+  printf("%s",searchinfo(devfopen("gpu"),"model"));
 
 }
 
