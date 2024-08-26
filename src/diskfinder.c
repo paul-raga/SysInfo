@@ -2,7 +2,7 @@
 // Created by paul on 8/25/24.
 //
 
-#include "diskfinder.h"
+#include "../include/diskfinder.h"
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>

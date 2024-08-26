@@ -2,7 +2,7 @@
 // Created by paul on 8/25/24.
 //
 
-#include "gpufinder.h"
+#include "../include/gpufinder.h"
 
 #include <dirent.h>
 #include <stdlib.h>

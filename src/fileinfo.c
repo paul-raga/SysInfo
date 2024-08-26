@@ -2,7 +2,7 @@
 // Created by paul on 8/26/24.
 //
 
-#include "fileinfo.h"
+#include "../include/fileinfo.h"
 #include <stdlib.h>
 #include <string.h>
 

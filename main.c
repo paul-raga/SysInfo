@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "diskinfo.h"
-#include "fileinfo.h"
-#include "basedevopen.h"
+#include "include/diskinfo.h"
+#include "include/fileinfo.h"
+#include "include/basedevopen.h"
 
 int main(void) {
 

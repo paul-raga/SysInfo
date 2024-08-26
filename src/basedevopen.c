@@ -2,9 +2,9 @@
 // Created by paul on 8/24/24.
 //
 
-#include "basedevopen.h"
+#include "../include/basedevopen.h"
 #include <string.h>
-#include "gpufinder.h"
+#include "../include/gpufinder.h"
 
 enum devtype {
     cpu,

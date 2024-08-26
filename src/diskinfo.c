@@ -2,8 +2,8 @@
 // Created by paul on 8/26/24.
 //
 
-#include "diskinfo.h"
-#include "diskfinder.h"
+#include "../include/diskinfo.h"
+#include "../include/diskfinder.h"
 
 #include <stdio.h>
 #include <stdlib.h>

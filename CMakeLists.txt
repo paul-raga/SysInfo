@@ -4,16 +4,16 @@ project(SysInfo_ C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(SysInfo_ main.c
-        basedevopen.c
-        basedevopen.h
-        devfinder.c
-        devfinder.h
-        gpufinder.c
-        gpufinder.h
-        diskfinder.c
-        diskfinder.h
-        fileinfo.c
-        fileinfo.h
-        diskinfo.c
-        diskinfo.h
+        src/basedevopen.c
+        include/basedevopen.h
+        src/devfinder.c
+        include/devfinder.h
+        src/gpufinder.c
+        include/gpufinder.h
+        src/diskfinder.c
+        include/diskfinder.h
+        src/fileinfo.c
+        include/fileinfo.h
+        src/diskinfo.c
+        include/diskinfo.h
 )

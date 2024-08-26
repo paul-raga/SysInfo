@@ -2,7 +2,7 @@
 // Created by paul on 8/24/24.
 //
 
-#include "devfinder.h"
+#include "../include/devfinder.h"
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
