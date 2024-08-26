@@ -16,7 +16,7 @@ char* searchinfo(FILE* file, const char* info) {
             if(strncmp(info,stringbuff,strlen(info)) == 0) {
                 return stringbuff;
             }
-        }
+        } return "parameter not present in the file";
     } else {
         return "device not present or not working";
     }

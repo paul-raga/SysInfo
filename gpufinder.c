@@ -32,7 +32,7 @@ bool findgpu() {
 
 char* gpupathfinder() {
     char* pathbuff = malloc(sizeof (char) * 256);
-    strcat(pathbuff,"/proc/driver");
+    strcpy(pathbuff,"/proc/driver");
 
     DIR* dir = opendir(pathbuff);
     struct dirent* entry;
