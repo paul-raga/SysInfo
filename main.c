@@ -1,20 +1,20 @@
 #include <stdio.h>
-#include "include/diskinfo.h"
+#include <malloc.h>
+#include "include/secondarydevfopen.h"
+#include "include/primarydevopen.h"
 #include "include/fileinfo.h"
-#include "include/basedevopen.h"
+
 
 int main(void) {
 
-  printf("%s\n", gatherDisksInfo());
+    char * string1 = allinfos(secondary_devfopen("inputdevs"));
+    char * string2 = allinfos(primary_devfopen("gpu"));
+    char * string3 = allinfos(secondary_devfopen("soundscard"));
 
-  printf("%s",searchinfo(devfopen("cpu"),"model name"));
-  printf("%s\n",searchinfo(devfopen("cpu"),"cpu cores"));
-
-  printf("%s",searchinfo(devfopen("mem"),"MemTotal"));
-  printf("%s",searchinfo(devfopen("mem"),"MemFree"));
-  printf("%s\n",searchinfo(devfopen("mem"),"MemAvailable"));
-
-  printf("%s",searchinfo(devfopen("gpu"),"model"));
+    printf("%s%s%s", string1, string2, string3);
+    free(string1);
+    free(string2);
+    free(string3);
 
 }
 

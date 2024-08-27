@@ -6,6 +6,6 @@
 #define FOPENER_H
 #include <stdio.h>
 
-FILE* devfopen(char* fname);
+FILE* primary_devfopen(char* fname);
 
 #endif //FOPENER_H
