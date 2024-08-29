@@ -9,6 +9,8 @@ char* createFullReport();
 
 char* createBaseReport();
 
-char* createCustomReport(char* device, char* param);
+char* customReport(char* device, const char* info);
+
+char* customFullReport(char* devlist);
 
 #endif //SYSINFO__DEVREPORT_H

@@ -3,12 +3,11 @@
 //
 
 
-#include "../include/devreport .h"
+#include "../include/sysreport.h"
 
 #include <malloc.h>
 #include <string.h>
-#include "../include/primarydevopen.h"
-#include "../include/secondarydevfopen.h"
+#include "../include/devfileopen.h"
 #include "../include/diskinfo.h"
 #include "../include/fileinfo.h"
 
@@ -16,18 +15,17 @@
 #define MIN_REPORT_SIZE 256
 #define MAX_LINE_SIZE 128
 
-
 char* createFullReport(){
     char* report = malloc(MAX_REPORT_SIZE);
 
-    char* cpustr = allinfos(primary_devfopen("cpu"));
-    char* memstr = allinfos(primary_devfopen("mem"));
-    char* gpustr = allinfos(primary_devfopen("gpu"));
+    char* cpustr = allinfos(devf_open("cpu"));
+    char* memstr = allinfos(devf_open("mem"));
+    char* gpustr = allinfos(devf_open("gpu"));
 
     char* diskstr = gatherDisksInfo();
 
-    char* soundstr = allinfos(secondary_devfopen("soundscard"));
-    char* inpstr = allinfos(secondary_devfopen("inputdevs"));
+    char* soundstr = allinfos(devf_open("soundscard"));
+    char* inpstr = allinfos(devf_open("inputdevs"));
 
     strcpy(report,"PROCESSORS: \n");
     strcat(report,cpustr);
@@ -62,15 +60,16 @@ char* createFullReport(){
 char* createBaseReport(){
     char* report = malloc(MIN_REPORT_SIZE);
 
-    char* cpu_model = searchinfo(primary_devfopen("cpu"),"model name");
-    char* cpu_cores = searchinfo(primary_devfopen("cpu"),"cpu cores");
-    char* cpu_threads = searchinfo(primary_devfopen("cpu"),"siblings");
+    char* cpu_model = searchinfo(devf_open("cpu"),"model name");
+    char* cpu_cores = searchinfo(devf_open("cpu"),"cpu cores");
+    char* cpu_threads = searchinfo(devf_open("cpu"),"siblings");
 
-    char* mem_total = searchinfo(primary_devfopen("mem"),"MemTotal");
-    char* mem_free = searchinfo(primary_devfopen("mem"),"MemFree");
-    char* mem_available = searchinfo(primary_devfopen("mem"),"MemAvailable");
 
-    char* gpu_model = searchinfo(primary_devfopen("gpu"),"Model");
+    char* mem_total = searchinfo(devf_open("mem"),"MemTotal");
+    char* mem_free = searchinfo(devf_open("mem"),"MemFree");
+    char* mem_available = searchinfo(devf_open("mem"),"MemAvailable");
+
+    char* gpu_model = searchinfo(devf_open("gpu"),"Model");
 
     strcat(report, "CPU: \n");
     strcat(report,cpu_model);
@@ -100,6 +99,14 @@ char* createBaseReport(){
 
 }
 
-char* createCustomReport(char* device, char* param) {
-
+char* customReport(char* device, const char* info) {
+    if(strncmp(info, "all",3) == 0) {
+        return allinfos(devf_open(device));
+    }
+    else
+        {
+        printf("%s%c", device,' ');
+        return searchinfo(devf_open(device),info);
+    }
 }
+

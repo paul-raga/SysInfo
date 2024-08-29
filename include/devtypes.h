@@ -5,7 +5,6 @@
 #ifndef SYSINFO__DEVTYPES_H
 #define SYSINFO__DEVTYPES_H
 
-
 enum devtype {
     cpu,
     mem,
