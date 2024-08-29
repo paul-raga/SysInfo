@@ -10,4 +10,5 @@ char* searchinfo(FILE* file, const char* info);
 
 char* allinfos(FILE* file);
 
+
 #endif //FILEINFO_H

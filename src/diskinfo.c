@@ -58,7 +58,9 @@ char* gatherDisksInfo() {
         free(modelinfo);
 
     }
+
     char * part_table = partiton_table();
+    strcat(stringbuf, "\n");
     strcat(stringbuf, part_table);
     free(part_table);
 

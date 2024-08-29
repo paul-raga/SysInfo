@@ -33,3 +33,4 @@ char* allinfos(FILE* file){
         return stringbuff;
     }else return "device file not present or not working";
 }
+

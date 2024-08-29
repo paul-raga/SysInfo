@@ -6,8 +6,6 @@ set(CMAKE_C_STANDARD 11)
 add_executable(SysInfo_ main.c
         src/primarydevopen.c
         include/primarydevopen.h
-        src/devfinder.c
-        include/devfinder.h
         src/gpufinder.c
         include/gpufinder.h
         src/diskfinder.c
@@ -21,4 +19,6 @@ add_executable(SysInfo_ main.c
         include/string_to_dev.h
         include/devtypes.h
         src/string_to_dev.c
+        "include/devreport .h"
+        src/devreport.c
 )
