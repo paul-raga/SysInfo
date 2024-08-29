@@ -1,0 +1,11 @@
+CPU --> /proc/cpuinfo  
+MEM --> /proc/meminfo  
+DISK MODEL --> /sys/block/"disk_type"/device/model 
+DISK PARTITIONS  --> /proc/partitions
+GPU --> /proc/driver/"vendor"/gpus/*number*/information                       
+GENERAL PC INFO (directory) --> /sys/class/dmi/id/                             
+INPUT DEVICES --> /proc/bus/input/devices
+SOUND CARDS --> /proc/asound/cards
+------------------------------------------------------------------------------------
+GENERAL USB DEVICES --> /sys/bus/usb/devices/                      
+
