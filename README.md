@@ -1,7 +1,55 @@
-# SysInfo
+# SysInfo 
+A simple command-line tool to print informations of your machine 
 
-The program explores /proc and /sys directories to retrieve informations about hardware devices. 
 
-It only uses fuctions from the C standard library and fetches data from common kernel-defined directories, making it portable on a wide range of systems running Linux.
+## Description
 
-SysInfo is at an early stage of development: avoid running it on low end or embedded devices as it could cause a crash or generate kernel panic. 
+SysInfo is a shell utility that fetches informations from various files spread across a tipical Unix file system. It is fully written in C and does not depend on any libreries, so it comes native and ready to run on any machine runnin a Linux kernel.  
+
+
+## Dependencies
+
+* Any Linux distribution on whatever architecture
+* GCC (version here)
+* CMake (version here)
+* Make (version here)
+
+## Installing
+
+Download and compile the source code:
+```
+git clone https://github.com/paul-raga/SysInfo.git
+cd SysInfo
+mkdir build
+cd build
+cmake ..
+make
+```
+
+## Executing program
+
+Currently installation does not add sysinfo to PATH, so from the project folder: 
+```
+./sysinfo
+```
+
+### Help
+
+To get help on how to use the tool: 
+```
+sysinfo help 
+```
+
+### Authors
+
+* Paul Ragazzini  
+paul.raga2001@gmail.com 
+
+### Version History
+
+* 0.1.0-alpha 
+    * Bulk of project functioning, cmd arguments yet to be implemented  
+
+### License
+
+This project is licensed under the GPL-3.0 License - see the LICENSE.md file for details
