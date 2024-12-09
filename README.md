@@ -1,5 +1,5 @@
 # SysInfo 
-A simple command-line tool to print informations of your machine 
+A simple command-line tool to print informations of your machine. 
 
 
 ## Description
