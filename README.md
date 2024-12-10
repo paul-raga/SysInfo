@@ -30,14 +30,14 @@ make
 
 Currently installation does not add sysinfo to PATH, so from the project folder: 
 ```
-./sysinfo
+./sysinfo <arguments>
 ```
 
 ### Help
 
 To get help on how to use the tool: 
 ```
-sysinfo help 
+./sysinfo -h
 ```
 
 ### Authors
@@ -48,7 +48,7 @@ paul.raga2001@gmail.com
 ### Version History
 
 * 0.1.0-alpha 
-    * Bulk of project functioning, cmd arguments yet to be implemented  
+    * Bulk of project functioning, support for base report and full report   
 
 ### License
 
