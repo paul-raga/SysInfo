@@ -3,7 +3,7 @@ project(SysInfo_ C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(SysInfo_ main.c
+add_executable(sysinfo main.c
 
         src/devfileopen.c
         include/devfileopen.h
@@ -20,4 +20,6 @@ add_executable(SysInfo_ main.c
         src/string_to_dev.c
         include/sysreport.h
         src/sysreport.c
+        include/arghandler.h
+        src/arghandler.c
 )

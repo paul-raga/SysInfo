@@ -1,16 +1,18 @@
 #include <stdio.h>
-#include "include/sysreport.h"
+#include "include/arghandler.h"
 
 
-int main(void) {
+int main(int argc, char *argv[]) {
 
-    //printf("%s",createFullReport());                   //WORKS
+    //printf("%s",createFullReport());
 
-    //printf("%s",createBaseReport());                   //WORKS
+    //printf("%s",createBaseReport());
 
-    //printf("%s", customReport("cpu","model name"));    //WORKS
+    //printf("%s", customReport("cpu","model name"));
 
-    //printf("%s",customReport("gpu","all"));            //WORKS
+    //printf("%s",customReport("gpu","all"));
+
+    handle_args(argc,argv);
 
     return 0;
 }
