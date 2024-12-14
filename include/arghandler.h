@@ -14,5 +14,5 @@ void handle_args(int argc, char *argv[]);
  * base report
  * full report
  * custom report:
- *      -
+ *      -device -information
  */
