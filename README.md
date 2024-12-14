@@ -48,7 +48,7 @@ paul.raga2001@gmail.com
 ### Version History
 
 * 0.1.0-alpha 
-    * Bulk of project functioning, support for base report and full report   
+    * full, base and custom system report support. Full report needs to be fixed due to memory allocation overflow on some devices     
 
 ### License
 
