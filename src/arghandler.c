@@ -11,12 +11,8 @@
 
 void handle_args(int argc, char *argv[]) {
 
-   int  option = getopt(argc, argv, "fbhc");
+   int  option = getopt(argc, argv, "bhc");
         switch (option) {
-
-            case 'f' :
-                printf("%s",createFullReport());
-                break;
 
             case 'b' :
                 printf("%s",createBaseReport());
@@ -43,13 +39,14 @@ void handle_args(int argc, char *argv[]) {
                 else {
                     printf("%s",customReport(device,info1));
                 }
-            
+
                 free(device);
                 free(info1);
                 break;
 
             case 'h':
-                printf("Options are:\n -f for the full system informations report\n -b for a basic system report\n -c to be prompted in a custom report creation\n");
+                printf("Options are:\n -b for a basic system report\n -c <device> <info_type1> <info_type2>(OPTIONAL) "
+                       "to search for a specific information of a device\n");
                 break;
 
             default :

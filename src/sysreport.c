@@ -11,10 +11,11 @@
 #include "../include/diskinfo.h"
 #include "../include/fileinfo.h"
 
-#define MAX_REPORT_SIZE 32768
-#define MIN_REPORT_SIZE 256
+//#define MAX_REPORT_SIZE 32768
+#define MIN_REPORT_SIZE 512
 #define MAX_LINE_SIZE 128
 
+/*
 char* createFullReport(){
     char* report = malloc(MAX_REPORT_SIZE);
 
@@ -55,6 +56,7 @@ char* createFullReport(){
 
     return report;
 }
+*/
 
 
 char* createBaseReport(){
@@ -63,6 +65,7 @@ char* createBaseReport(){
     char* cpu_model = searchinfo(devf_open("cpu"),"model name");
     char* cpu_cores = searchinfo(devf_open("cpu"),"cpu cores");
     char* cpu_threads = searchinfo(devf_open("cpu"),"siblings");
+    char* disk_data = gatherDisksInfo();
 
 
     char* mem_total = searchinfo(devf_open("mem"),"MemTotal");
@@ -83,6 +86,10 @@ char* createBaseReport(){
     strcat(report,mem_available);
     strcat(report, "*************************************** \n");
 
+    //gatherDisksInfo already contains "DISKS: " at the beginning of its string buffer
+    strcat(report,disk_data);
+    strcat(report, "*************************************** \n");
+
     strcat(report,"GPU: \n");
     strcat(report,gpu_model);
 
@@ -94,6 +101,7 @@ char* createBaseReport(){
     free(mem_total);
     free(mem_free);
     free(gpu_model);
+    free(disk_data);
 
     return report;
 
