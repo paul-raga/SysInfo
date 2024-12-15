@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void handle_args(int argc, char *argv[]) {
 
@@ -22,20 +23,29 @@ void handle_args(int argc, char *argv[]) {
                 break;
 
             case 'c' :
-                char *device = malloc(sizeof(char)*12 + 1);
-                char *info = malloc(sizeof(char)*24 + 1);
+                char *device;
+                char *info1;
+                char *infocat = malloc(sizeof(char)*36);
 
-                printf("what device's informations do you want? : ");
-                scanf("%s",device);
+                device = argv[optind];
+                info1 = argv[optind+1];
 
-                printf("what kind of information do you want? : ");
-                scanf("%s",info);
+                if (argv[optind+2] != NULL) {
+                    char *info2 = argv[optind + 2];
+                    strcat(infocat, info1);
+                    strcat(infocat, " ");
+                    strcat(infocat, info2);
 
-
-                printf("%s",customReport(device,info));
-
-                free(info);
+                    printf("%s",customReport(device,infocat));
+                    free(infocat);
+                    free(info2);
+                }
+                else {
+                    printf("%s",customReport(device,info1));
+                }
+            
                 free(device);
+                free(info1);
                 break;
 
             case 'h':

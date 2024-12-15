@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_BUFFSIZE 8192
+#define MAX_BUFFSIZE 32768
 #define MAX_LINE_SIZE 128
 
 char* searchinfo(FILE* file, const char* info) {

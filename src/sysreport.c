@@ -11,7 +11,7 @@
 #include "../include/diskinfo.h"
 #include "../include/fileinfo.h"
 
-#define MAX_REPORT_SIZE 16384
+#define MAX_REPORT_SIZE 32768
 #define MIN_REPORT_SIZE 256
 #define MAX_LINE_SIZE 128
 
