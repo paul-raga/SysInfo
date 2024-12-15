@@ -30,7 +30,11 @@ make
 
 Currently installation does not add sysinfo to PATH, so from the project folder: 
 ```
-./sysinfo <arguments>
+./sysinfo -c <device> <option1> <option2> 
+```
+or for a basic system informations report: 
+```
+./sysinfo -b
 ```
 
 ### Help
@@ -48,7 +52,7 @@ paul.raga2001@gmail.com
 ### Version History
 
 * 0.1.0-alpha 
-    * full, base and custom system report support. Full report needs to be fixed due to memory allocation overflow on some devices     
+    * Support for "base report" includes cpu, memory, disks and gpu base informations. With a "custom report" it's possible to get specific data for a specific device  
 
 ### License
 
