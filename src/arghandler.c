@@ -27,21 +27,17 @@ void handle_args(int argc, char *argv[]) {
                 info1 = argv[optind+1];
 
                 if (argv[optind+2] != NULL) {
-                    char *info2 = argv[optind + 2];
+                    const char *info2 = argv[optind + 2];
                     strcat(infocat, info1);
                     strcat(infocat, " ");
                     strcat(infocat, info2);
 
                     printf("%s",customReport(device,infocat));
                     free(infocat);
-                    free(info2);
                 }
                 else {
                     printf("%s",customReport(device,info1));
                 }
-
-                free(device);
-                free(info1);
                 break;
 
             case 'h':

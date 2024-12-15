@@ -15,6 +15,8 @@
 #define MIN_REPORT_SIZE 512
 #define MAX_LINE_SIZE 128
 
+
+
 /*
 char* createFullReport(){
     char* report = malloc(MAX_REPORT_SIZE);
@@ -108,13 +110,19 @@ char* createBaseReport(){
 }
 
 char* customReport(char* device, const char* info) {
-    if(strncmp(info, "all",3) == 0) {
-        return allinfos(devf_open(device));
-    }
-    else
+      if(strcmp(device,"disk")==0) {
+        return gatherDisksInfo();
+      }
+
+        if(strncmp(info, "all",3) == 0) {
+            return allinfos(devf_open(device));
+        }
+        else
         {
-        printf("%s%c", device,' ');
-        return searchinfo(devf_open(device),info);
-    }
+            printf("%s%c", device,' ');
+            return searchinfo(devf_open(device),info);
+        }
+
 }
+
 
