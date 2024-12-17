@@ -4,6 +4,8 @@
 
 #include "../include/arghandler.h"
 #include "../include/sysreport.h"
+#include "../include/boardinfo.h"
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +13,7 @@
 
 void handle_args(int argc, char *argv[]) {
 
-   int  option = getopt(argc, argv, "bhc");
+   int  option = getopt(argc, argv, "bhcp");
         switch (option) {
 
             case 'b' :
@@ -41,9 +43,14 @@ void handle_args(int argc, char *argv[]) {
                 break;
 
             case 'h':
-                printf("Options are:\n -b for a basic system report\n -c <device> <info_type1> <info_type2>(OPTIONAL) "
+                printf("Options are:\n -b for a basic system report\n "
+                       "-p for the product infos\n "
+                       "-c <device> <info_type1> <info_type2>(OPTIONAL) "
                        "to search for a specific information of a device\n");
                 break;
+
+            case 'p' :
+               printf("%s", createBoardReport());
 
             default :
                 printf("type \"sysinfo -h\" for to list the possible arguments\n");
