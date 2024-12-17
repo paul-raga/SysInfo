@@ -51,6 +51,7 @@ void handle_args(int argc, char *argv[]) {
 
             case 'p' :
                printf("%s", createBoardReport());
+               break;
 
             default :
                 printf("type \"sysinfo -h\" for to list the possible arguments\n");
