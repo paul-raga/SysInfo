@@ -22,8 +22,8 @@ add_executable(sysinfo main.c
         src/sysreport.c
         include/arghandler.h
         src/arghandler.c
-        "include/utils/customStrUtils.h"
+        include/utils/customStrUtils.h
         src/utils/customStrUtils.c
         src/boardinfo.c
-        src/boardinfo.h
+        include/boardinfo.h
 )
